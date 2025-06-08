@@ -80,10 +80,10 @@ if uploaded_file:
         try:
             explainer = shap.Explainer(model, X)
             shap_values = explainer(X)
-            st.set_option('deprecation.showPyplotGlobalUse', False)
             st.write("Feature impact for a sample of 100 rows:")
-            shap.summary_plot(shap_values[:100], X.iloc[:100], plot_type="bar")
-            st.pyplot(bbox_inches='tight')
+            fig, ax = plt.subplots(figsize=(10, 6))
+            shap.summary_plot(shap_values[:100], X.iloc[:100], plot_type="bar", show=False)
+            st.pyplot(fig)
             write_audit_log("SHAP explainability chart generated")
         except Exception as e:
             st.warning(f"SHAP explanation failed: {e}")
