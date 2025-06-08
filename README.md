@@ -1,3 +1,4 @@
-# GxP Validator for Jira - Anomaly Detection
+# GxP Validator for Jira (Anomaly Detection App)
 
-This is a Streamlit-based proof-of-concept app for detecting anomalies in GxP-relevant Jira data.
+This Streamlit app detects anomalies in Jira or GxP-related data using machine learning.
+Includes validation report, SHAP explanations, and audit logs for compliance.
